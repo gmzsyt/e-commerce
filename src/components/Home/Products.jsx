@@ -41,10 +41,10 @@ const Products = ({category,sort}) => {
 
   return (
     <div>
-      {productsStatus == "LOADING" ? <Loading /> : 
+      {productsStatus === "LOADING" ? <Loading /> : 
       <>
       <ReactPaginate
-      className='paginate font-bold'
+      className='paginate font-bold  '
         breakLabel="..."
         nextLabel=" > "
         onPageChange={handlePageClick}
@@ -53,7 +53,7 @@ const Products = ({category,sort}) => {
         previousLabel=" < " 
         renderOnZeroPageCount={null}
       />
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap '>
       {
         currentItems.map((product, index) => (
           <Product key={index} product={product}/>

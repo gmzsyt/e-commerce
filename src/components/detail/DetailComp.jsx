@@ -40,11 +40,11 @@ const DetailComp = ({ productDetail }) => {
         <div className='text-2xl text-yellow-500'>Count: {productDetail?.rating?.count}</div>
         <div className='my-2 text-5xl text-green-500 font-bold'>Price: {productDetail?.price}</div>
         <div className='flex items-center my-5 text-4xl font-bold'>
-          <div className='cursor-pointer' onClick={handleDecrement}>-</div>
+          <div className='cursor-pointer hover:text-gray-700' onClick={handleDecrement}>-</div>
           <input type='text' value={quantity} readOnly className='mx-2 w-10 text-center' />
-          <div className='cursor-pointer' onClick={handleIncrement}>+</div>
+          <div className='hover:text-gray-700 cursor-pointer' onClick={handleIncrement}>+</div>
         </div>
-        <div className='border bg-gray-200 w-1/5 my-2 p-2 cursor-pointer text-center font-bold' onClick={handleAddToCart}>
+        <div className='border hover:shadow-lg bg-gray-200 w-1/5 my-2 p-2 cursor-pointer text-center font-bold' onClick={handleAddToCart}>
           Add To Cart
         </div>
       </div>

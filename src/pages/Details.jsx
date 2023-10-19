@@ -17,7 +17,6 @@ const Details = () => {
 
   return (
     <div>
-      {/* Ürün detayının yükleniyor olup olmadığını kontrol etmek için doğru ismi kullanın */}
       {productDetailStatus === 'LOADING' ? <Loading /> : <DetailComp productDetail={productDetail} />}
     </div>
   );
