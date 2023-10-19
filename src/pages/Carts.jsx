@@ -13,8 +13,8 @@ const Carts = () => {
             </div>  
           )}
       </div>
-      <div className='mt-3 bg-gray-300'> </div>
-      <div className='flex justify-between'>
+      <div className='bg-gray-300 h-2 rounded-md' ></div>
+      <div className='flex justify-between mt-5'>
        <h4 className='font-bold text-4xl'>Total</h4>
        <h4 className='font-bold text-4xl'>{cartItems.totalPrice} $</h4>
      </div>

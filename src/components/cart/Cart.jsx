@@ -15,7 +15,7 @@ const Cart = ({cartItem}) => {
   
 
   return (
-    <div className='mb-10 p-10 flex flex-row border-2 border-gray-300'>
+    <div className='mb-5 p-10 flex flex-row border-2 border-gray-300 rounded-2xl'>
       <img className='basis-1/4 w-[200px] h-[200px] object-contain m-auto' src={cartItem.product?.image} alt=""/>
             <div className='basis-1/2 flex justify-between flex-col'>
               <h3 className='font-bold text-2xl pb-3'>{cartItem.product?.title}</h3>
