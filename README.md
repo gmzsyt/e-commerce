@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# E-Commerce Website Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created to develop an e-commerce website. The project provides essential e-commerce functionality, allowing customers to review products, add them to the cart, and make purchases.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+- **components**: Contains React components.
+  - **products-and-details**: Components related to products and details.
+- **containers**: Container components managing state.
+- **pages**: React pages.
+  - *products-and-details*: Pages related to products and details.
+- **redux**: Files related to Redux.
+- **utils**: Utility functions.
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**HomePage**
+  ![Navbar](https://github.com/gmzsyt/e-commerce/assets/82291548/32902374-6135-4c4e-9aab-234036741405)
+- **Sort Result**
+  ![Sort](https://github.com/gmzsyt/e-commerce/assets/82291548/db8f20ac-b2af-4616-930d-41b9694c196c)
+  - **Categories**
+  ![image](https://github.com/gmzsyt/e-commerce/assets/82291548/e8751a77-e642-413d-8280-14997902db60)
+  - **Product and Paginate**
+  ![image](https://github.com/gmzsyt/e-commerce/assets/82291548/b6d27e07-24d0-49f2-b773-9a1ffce95a8b)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**CardPage**
+![image](https://github.com/gmzsyt/e-commerce/assets/82291548/512fd54e-8fb6-4432-a193-8dfaf09a3303)
+![image](https://github.com/gmzsyt/e-commerce/assets/82291548/b5867501-c084-4f88-80b1-f53b4698ff37)
 
-### `npm test`
+**DetailPage**
+![image](https://github.com/gmzsyt/e-commerce/assets/82291548/8595c6e3-2a54-45f3-ac63-d83885c42559)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Files
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **App.css**: Styles for the application.
+- **App.js**: Main application component.
+- **index.css**: Styles for the index.
+- **index.js**: Entry point for the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Run the application with `npm start`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you want to contribute to this project, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Fork the project.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+This project is licensed under the [LICENSE NAME] - see the [LICENSE.md](LICENSE.md) file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Any acknowledgments or credits you want to give.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
