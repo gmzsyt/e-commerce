@@ -21,12 +21,19 @@ export const getCategoryProduct = createAsyncThunk("getCategoryProduct" , async 
   return data;
 })
 
-export const getSortProduct = createAsyncThunk("getSortProduct" , async (sort) => {
-  const response = await fetch(`https://fakestoreapi.com/products?sort=${sort}`)
-  const data = response.json();
-  return data;
-})
+export const getSortProduct = createAsyncThunk("getSortProduct", async (sort) => {
+  const sortFunction = (a, b) => (sort === "desc" ? b.price - a.price : a.price - b.price);
 
+  try {
+    const response = await fetch('https://fakestoreapi.com/products');
+    const data = await response.json();
+    const sortedProducts = data.sort(sortFunction);
+    return sortedProducts;
+  } catch (error) {
+    console.error("Error while sorting products:", error);
+    throw error;
+  }
+});
 export const getDetailProduct = createAsyncThunk("getDetails" , async (id) => {
     const response = await fetch(`https://fakestoreapi.com/products/${id}`)
     const data = response.json();
@@ -36,7 +43,7 @@ export const getDetailProduct = createAsyncThunk("getDetails" , async (id) => {
 const productsSlice = createSlice({
     name: 'products',   
     initialState,
-    reducers: [],
+    reducer: [],
     extraReducers: (builder) => {
     builder
     .addCase(getProducts.pending, (state, action) => {
@@ -69,18 +76,18 @@ const productsSlice = createSlice({
       })
       .addCase(getCategoryProduct.rejected, (state, action) => {
         state.productsStatus = STATUS.ERROR;
-      })
+      })   
       .addCase(getSortProduct.pending, (state, action) => {
         state.productsStatus = STATUS.LOADING;
       })
       .addCase(getSortProduct.fulfilled, (state, action) => {
         state.productsStatus = STATUS.SUCCESS;
-        state.products = action.payload;
+         state.products = action.payload;
       })
       .addCase(getSortProduct.rejected, (state, action) => {
         state.productsStatus = STATUS.ERROR;
       })
-    }
-})
+     }
+   })
 
 export default productsSlice.reducer
