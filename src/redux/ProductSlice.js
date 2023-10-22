@@ -40,12 +40,12 @@ export const getDetailProduct = createAsyncThunk("getDetails" , async (id) => {
     return data;
 })
 
-export const getSerachProduct = createAsyncThunk("getSerach" , async (searh) =>{
+export const getSerachProduct = createAsyncThunk("getSerach" , async (search) =>{
   
   try {
     const response = await fetch('https://fakestoreapi.com/products');
     const data =await response.json();
-    const searchedProducts = data.filter(product => product.title.toUpperCase().includes(searh));
+    const searchedProducts = data.filter(product => product.title.toUpperCase().includes(search.toUpperCase()));
     console.log(searchedProducts);
     return searchedProducts;
   } catch (error) {

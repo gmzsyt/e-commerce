@@ -5,6 +5,7 @@ import {SlBasket} from "react-icons/sl"
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getSerachProduct } from '../../../redux/ProductSlice'
+import { useEffect } from 'react'
  
 
 const NavbarRight = ({search,setSearch}) => {
@@ -14,8 +15,10 @@ const NavbarRight = ({search,setSearch}) => {
 
   const handleInput = (event) => {
    setSearch(event.target.value)
-   dispatch(getSerachProduct(search));
   };
+  useEffect(() => {
+    dispatch(getSerachProduct(search));
+  }, [search, dispatch])
 
   const navigate = useNavigate();
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
