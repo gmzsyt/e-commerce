@@ -40,10 +40,22 @@ export const getDetailProduct = createAsyncThunk("getDetails" , async (id) => {
     return data;
 })
 
+export const getSerachProduct = createAsyncThunk("getSerach" , async (searh) =>{
+  
+  try {
+    const response = await fetch('https://fakestoreapi.com/products');
+    const data =await response.json();
+    const searchedProducts = data.filter(product => product.title.toUpperCase().includes(searh));
+    console.log(searchedProducts);
+    return searchedProducts;
+  } catch (error) {
+    console.error('Hata:', error);
+}
+})
 const productsSlice = createSlice({
     name: 'products',   
     initialState,
-    reducer: [],
+    reducers: {},
     extraReducers: (builder) => {
     builder
     .addCase(getProducts.pending, (state, action) => {
@@ -86,6 +98,16 @@ const productsSlice = createSlice({
       })
       .addCase(getSortProduct.rejected, (state, action) => {
         state.productsStatus = STATUS.ERROR;
+      })
+      .addCase(getSerachProduct.pending, (state, action) =>{
+        state.productsStatus = STATUS.LOADING
+      })
+      .addCase(getSerachProduct.fulfilled, (state, action) =>{
+        state.productsStatus = STATUS.SUCCESS;
+        state.products = action.payload
+      })
+      .addCase(getSerachProduct.rejected, (state, action) =>{
+        state.productsStatus = STATUS.ERROR
       })
      }
    })

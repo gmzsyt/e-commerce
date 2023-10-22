@@ -2,11 +2,11 @@ import React from 'react'
 import NavbarLeft from './navbarItem/NavbarLeft'
 import NavbarRight from './navbarItem/NavbarRight'
 
-const Navbar = () => {
+const Navbar = ({search,setSearch}) => {
   return (
     <div className='flex items-center justify-between my-5'>
-      <NavbarLeft/>
-      <NavbarRight/>
+      <NavbarLeft />
+      <NavbarRight search ={search} setSearch = {setSearch}/>
     </div>
   )
 }

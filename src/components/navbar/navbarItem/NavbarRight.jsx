@@ -2,20 +2,35 @@ import React from 'react'
 import {BiSearch} from "react-icons/bi"
 import {AiOutlineHeart} from "react-icons/ai"
 import {SlBasket} from "react-icons/sl"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { getSerachProduct } from '../../../redux/ProductSlice'
  
 
-const NavbarRight = () => {
-  
+const NavbarRight = ({search,setSearch}) => {
+
+  const dispatch = useDispatch();
+
+
+  const handleInput = (event) => {
+   setSearch(event.target.value)
+   dispatch(getSerachProduct(search));
+  };
 
   const navigate = useNavigate();
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
+
   return (
     <div className='flex items-center gap-8'>
       <div className='flex items-center border p-3 rounded-full bg-gray-200'>
-      <input className= " bg-gray-200 h-5 w-80 outline-none cursor-pointer hover:text-gray-700" type='text' placeholder='Arama Yapınız...'/>
-      <BiSearch size={28} />
+      <input
+          className="bg-gray-200 h-5 w-80 outline-none cursor-pointer hover:text-gray-700"
+          type='text'
+          placeholder='Arama Yapınız...'
+          value={search}
+          onChange={handleInput} 
+        />
+      <BiSearch onClick={handleInput} size={28} />
       </div>
       <AiOutlineHeart size={28}/>
       <div className='relative cursor-pointer hover:text-gray-700' onClick={()=>navigate("/cart ")}>
